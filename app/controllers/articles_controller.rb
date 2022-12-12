@@ -11,14 +11,11 @@ class ArticlesController < ApplicationController
         @articles = Article.paginate(page: params[:page], per_page: 5)
       end
       def new
-          @article =Article.new
-  
+        @article =Article.new 
       end
       def edit
       
-      end
-    
-    
+      end    
       def create
         @article = Article.new(article_params)
         @article.user = current_user
@@ -57,7 +54,4 @@ class ArticlesController < ApplicationController
           redirect_to @article
         end
       end
-    
-    
-  
-  end
+end
